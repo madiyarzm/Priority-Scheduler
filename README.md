@@ -1,83 +1,96 @@
-# Priority Scheduler
+# 🌟 Priority Scheduler 📅  
 
-A **Priority Scheduler** designed by Madiyar Zhunussov to optimize daily task management. This scheduler dynamically prioritizes tasks based on **dependencies**, **importance**, **duration**, and **fixed time constraints**. It employs **Max-Heap** and **Priority Queues** to efficiently allocate tasks while minimizing idle time and ensuring logical task execution.
-
----
-
-## Features
-
-### 1. **Task Prioritization**
-- **Dynamic Utility Calculation**:
-  - **Fixed Tasks**: Always scheduled at their designated times.
-  - **Flexible Tasks**: Scheduled dynamically based on utility.
-    - **Utility Formula**:  
-      - `Utility = 100 − (Dependencies * 10) − Duration Penalty + Importance Bonus`
-    - **Importance Levels**:
-      - High: +30 points
-      - Medium: +15 points
-      - Low: +0 points
-- Tasks with higher **importance** and **longer durations** are prioritized.
-
-### 2. **Dependency Management**
-- Tasks with dependencies are only scheduled after their prerequisites are completed.
-
-### 3. **Efficiency Optimization**
-- Minimizes idle time by fitting flexible tasks between fixed tasks.
-- Dynamically recalculates task priorities after each completion.
-
-### 4. **Flexibility**
-- Supports fixed and flexible tasks, making it adaptable to real-life schedules.
+A dynamic **Priority Scheduler** designed to manage daily tasks efficiently by leveraging **Max-Heaps** and **Priority Queues**. It ensures optimal scheduling by balancing **importance**, **duration**, and **dependencies**, while seamlessly integrating fixed and flexible tasks.  
 
 ---
 
-## Code Implementation
+## ✨ Features  
 
-### **MaxHeap**
-Custom implementation of a max-heap for managing task priorities:
-- **Time Complexity**:
-  - `heappush`: O(log n)
-  - `heappop`: O(log n)
-- **Space Complexity**: O(n)
+### 🧠 **Smart Task Prioritization**  
+Tasks are assigned utility scores based on:  
+- **Fixed Time Constraints** ⏰: Tasks with strict start times are prioritized.  
+- **Dynamic Utility Formula** 🤖:  
+  - **Utility** = `100 − (Dependencies * 10) − Duration Penalty + Importance Bonus`  
+  - **Importance Levels**:  
+    - 🟥 High: +30 points  
+    - 🟨 Medium: +15 points  
+    - 🟩 Low: +0 points  
+  - **Duration Bonus**: Long tasks are rewarded to reflect higher energy requirements.  
 
-### **Task Class**
-Defines tasks with attributes such as `id`, `description`, `duration`, `dependencies`, `importance`, and `is_fixed`.  
-- **Key Method**: `calculate_priority()` computes task utility dynamically.
+### 🔗 **Dependency Management**  
+- Ensures tasks with dependencies are scheduled only after their prerequisites.  
+- Example: **Take Medicine II** 💊 requires **Take Medicine I**.  
 
-### **TaskScheduler**
-Manages task execution using a priority queue:
-- Handles fixed and flexible tasks.
-- Resolves dependencies dynamically.
-- Ensures efficient task ordering.
+### ⚡ **Efficiency Optimization**  
+- Minimizes idle time by strategically fitting flexible tasks between fixed ones.  
+- Recalculates priorities dynamically after each task completion.  
 
-
-## Advantages
-
-### Advantages
-- Efficient handling of fixed and flexible tasks.
-- Dynamic prioritization balances task importance and dependencies.
-- Optimized scheduling minimizes idle time.
-
-## Visualization
-
-The scheduler's performance metrics were plotted using **Matplotlib** to analyze runtime efficiency and task order consistency.
+### 🔄 **Flexibility**  
+- Supports a mix of **fixed** and **flexible** tasks.  
+- Automatically adapts the schedule to available time slots.  
 
 ---
 
-## Getting Started
+## 🛠️ Code Implementation  
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/priority-scheduler.git
-   ```
-2. Install necessary libraries (if required):
-   ```bash
-   pip install matplotlib pandas
-   ```
-3. Run the `priority_scheduler.py` script:
-   ```bash
-   python priority_scheduler.py
-   ```
+### 📈 **MaxHeap**  
+A custom implementation to manage task priorities efficiently:  
+- **Operations**:  
+  - `heappush` 📥: Add tasks to the heap.  
+  - `heappop` 📤: Retrieve the highest-priority task.  
+- **Complexity**:  
+  - Time: O(log n)  
+  - Space: O(n)  
 
-## License
+### 🗂️ **Task Class**  
+Defines individual tasks with attributes:  
+- **ID** 🔢  
+- **Description** 📝  
+- **Duration** ⏳  
+- **Dependencies** 🔗  
+- **Importance** 🔴🟡🟢  
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+### 🏗️ **TaskScheduler**  
+Manages task execution and ensures logical ordering:  
+- Dynamically recalculates task priorities.  
+- Handles **fixed** ⏰ and **flexible** 🕒 tasks seamlessly.  
+
+---
+
+## 🧪 Tests and Results  
+
+### ✅ Test Cases  
+1. **No Dependencies**: Executes tasks based on importance and duration.  
+2. **Idle Time Optimization**: Fills idle slots with flexible tasks.  
+3. **Complex Dependency Chains**: Maintains logical execution order.  
+
+### 📊 Empirical Analysis  
+- **Runtime Efficiency**: Logarithmic growth for heap operations.  
+- **Consistency**: Execution order remains the same across input variations.  
+
+## 📈 Visualization  
+
+Performance metrics were plotted to analyze runtime efficiency and scheduling consistency.  
+
+---
+
+## 🏁 Getting Started  
+
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/yourusername/priority-scheduler.git  
+   ```  
+2. Install dependencies:  
+   ```bash  
+   pip install matplotlib pandas  
+   ```  
+3. Run the scheduler:  
+   ```bash  
+   python priority_scheduler.py  
+   ```  
+
+## 📜 License  
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.  
+
+---  
