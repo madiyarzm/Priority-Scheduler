@@ -1,26 +1,2 @@
-# Ignore HTML files
-*.html
-
-# Ignore frontend folder (optional if it's separate)
-frontend/
-public/
-
-# Python-related files to keep GitHub highlighting correct
-*.py
-!*.py
-
-# Recommended: keep requirements
-requirements.txt
-!requirements.txt
-
-# Python cache
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-
-# Virtual environments
-env/
-venv/
-ENV/
-.venv/
+*.py linguist-detectable=true
+*.html linguist-detectable=false
